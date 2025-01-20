@@ -53,4 +53,6 @@ with "- part n" where "n" is the respective part number.
 - Addressing punctuation errors is currently out of scope for this implementation.
 - The current implementation does not handle the case where a single word is longer than 160 characters (including
   suffix). In a real-world application, this should be addressed.
+- The database index on `splitter_message_parts.message_id` could be replaced by a **deferred** unique constraint
+  including `position`. There should be a uniqueness validation, too.
 - The application can be started via `docker compose up -d --build web`.
